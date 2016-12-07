@@ -1,21 +1,26 @@
 <?php
-$con_name = $_POST["con_name"];
-$con_email = $_POST["con_email"];
-$con_message = $_POST["con_message"];
+$con_name = $_POST['con_name'];
+$con_email = $_POST['con_email'];
+$con_message = $_POST['con_message'];
 
-$to = "isaac@aira.com";   
-$subject = "Contacto Nuevo";
 
-$message = "
 
-Name:  ".$con_name."
-E-mail:  ".$con_email."
-Message  ".$con_message."
-";
 
-mail($to,$subject,utf8_decode($message));
-echo "<p><h2>Hemos recibido tu mensaje</h2></p>;
+$to = 'isaac@aira.mx';   
+$subject = 'Vcard User Query';
 
-?>
+$message = '<strong>Name : </strong>'.$con_name.'<br/><br/>';
+
+$message .= $con_message.'<br/>';
+
+
+$headers = 'From: '.$con_name.' '.$con_email . "\r\n" ;
+$headers .='Reply-To: '. $to . "\r\n" ;
+$headers .='X-Mailer: PHP/' . phpversion();
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
+
+mail($to,$subject,$message,$headers);
+echo 1;
 
 
