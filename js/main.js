@@ -92,7 +92,7 @@ $(document).ready( function() {
         e.preventDefault();
         
         var uri = $(this).attr('action');
-        $("#con_submit").val('Wait...');
+        $("#submit").val('Wait...');
         var name = $("#name").val();
         var email = $("#email").val();
         var message = $("#message").val();
