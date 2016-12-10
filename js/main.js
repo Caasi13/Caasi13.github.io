@@ -120,7 +120,7 @@ $(document).ready( function() {
         {
             $.ajax({
                 type: "post",
-                url: 'contact.php',
+                url: 'http://www.isaacsuaste.me/contact.php',
                 data: {name: name, email: email, message: message},
                 success: function(data)
                 {
